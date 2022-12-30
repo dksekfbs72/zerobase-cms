@@ -15,7 +15,10 @@ public enum ErrorCode {
 
 	//login
 	LOGIN_CHECK_FAIL(HttpStatus.BAD_REQUEST, "패스워드를 확인해주세요."),
+	NOT_VERIFICATION(HttpStatus.BAD_REQUEST, "이메일 인증 후 이용해주세요."),
 
+
+	NOT_ENOUGH_BALANCE(HttpStatus.BAD_REQUEST, "잔액이 부족합니다.")
 	;
 
 	private final HttpStatus httpStatus;

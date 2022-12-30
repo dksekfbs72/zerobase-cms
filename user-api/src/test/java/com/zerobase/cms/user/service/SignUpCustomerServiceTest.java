@@ -1,9 +1,8 @@
 package com.zerobase.cms.user.service;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
+import com.zerobase.cms.user.service.customer.SignUpCustomerService;
 import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

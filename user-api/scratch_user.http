@@ -1,0 +1,66 @@
+### 회원가입 ( 고객)
+POST http://localhost:8080/signup/customer
+Content-Type: application/json
+
+{
+  "email": "dksekfbs72@naver.com",
+  "name": "myName",
+  "password": "pw",
+  "birth": "2099-12-22",
+  "phone": "01000000000"
+}
+
+### 이메일 인증 ( 고객)
+GET http://localhost:8080/signup/customer/verify?email=dksekfbs72@naver.com&code=vgVdjT46ee
+
+### 로그인 ( 고객)
+POST http://localhost:8080/signIn/customer
+Content-Type: application/json
+
+{
+  "email": "dksekfbs72@naver.com",
+  "password": "pw"
+}
+
+### 회원 정보 조회 ( 고객)
+GET http://localhost:8080/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI0MTQxNTMsImV4cCI6MTY3MjUwMDU1M30.eYcf0bPb4jAbBPHcwdmK-5b1RluDsBNXD39biHdJrtw
+
+### 잔액 변경( 고객)
+POST http://localhost:8080/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI0MTQxNTMsImV4cCI6MTY3MjUwMDU1M30.eYcf0bPb4jAbBPHcwdmK-5b1RluDsBNXD39biHdJrtw
+
+{
+  "from" : "server",
+  "message" : "돈 충전",
+  "money" : 5000
+}
+
+##############################
+
+### 회원가입 ( 셀러 )
+POST http://localhost:8080/signup/seller
+Content-Type: application/json
+
+{
+  "email": "dksekfbs72@naver.com",
+  "name": "myName",
+  "password": "pw",
+  "birth": "2099-12-22",
+  "phone": "01000000000"
+}
+
+### 이메일 인증 ( 셀러)
+GET http://localhost:8080/signup/seller/verify?email=dksekfbs72@naver.com&code=lKvOClPezC
+
+
+### 로그인 ( 셀러 )
+POST http://localhost:8080/signIn/seller
+Content-Type: application/json
+
+{
+  "email": "dksekfbs72@naver.com",
+  "password": "pw"
+}

@@ -74,3 +74,42 @@ Content-Type: application/json
 ### 상품 디테일 검색
 GET http://localhost:8081/search/product/detail?productId=2
 Content-Type: application/json
+
+### 카트 추가
+POST http://localhost:8081/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI0ODQ3MTEsImV4cCI6MTY3MjU3MTExMX0.Efrw3ZyMx7TGDHPtZmjbSkgsNwFXQpFE2nm0mB4yCPg
+
+{
+  "id" : 1,
+  "description": "신발",
+  "items": [
+    {
+      "id": 1,
+      "name": "270",
+      "price": 20000,
+      "count": 9
+    }
+  ],
+  "name" : "나이키",
+  "sellerId" : 1
+}
+
+### 상품 등록 ( 셀러 )
+POST http://localhost:8081/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjcyNDY2Mjc0LCJleHAiOjE2NzI1NTI2NzR9.LGwpYjs8j2ird6Gm2oPSzvOMK2hhiRX2C5LfHXvCgdI
+
+{
+  "id" : 2,
+  "name" : "나이키",
+  "description": "신발",
+  "items": [
+    {
+      "productId": 1,
+      "name": "270",
+      "price": 20000,
+      "count": 20
+    }
+  ]
+}

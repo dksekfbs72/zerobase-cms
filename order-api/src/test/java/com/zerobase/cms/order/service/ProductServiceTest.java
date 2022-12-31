@@ -27,6 +27,8 @@ class ProductServiceTest {
 	private ProductRepository productRepository;
 	@Autowired
 	private  ProductItemService productItemService;
+	@Autowired
+	private ProductSearchService productSearchService;
 
 	@Test
 	void ADD_PRODUCT_TEST() {
@@ -90,6 +92,25 @@ class ProductServiceTest {
 
 		assertEquals(p.getName(),"나이키 에어포스");
 		assertNull(result);
+	}
+
+	@Test
+	@Transactional
+	void SEARCH_PRODUCT_TEST() {
+		Long sellerId = 1L;
+
+		AddProductForm form = makeProductForm("나이키 에어포스", "신발", 3);
+
+		Product p = productService.addProduct(sellerId, form);
+		productService.addProduct(sellerId, form);
+		productService.addProduct(sellerId, form);
+
+		List<Product> result = productSearchService.searchByName("나이키");
+
+		assertEquals(p.getName(),"나이키 에어포스");
+		assertEquals(result.size(), 3);
+		assertEquals(result.get(0).getName(), "나이키 에어포스");
+		assertEquals(result.get(0).getId(), 1);
 	}
 
 	private static AddProductForm makeProductForm(String name, String description, int itemCount) {

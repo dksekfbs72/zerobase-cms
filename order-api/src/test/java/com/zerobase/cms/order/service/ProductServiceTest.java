@@ -2,6 +2,7 @@ package com.zerobase.cms.order.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.zerobase.cms.order.domain.model.Product;
 import com.zerobase.cms.order.domain.product.AddProductForm;
@@ -14,6 +15,8 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 
 @SpringBootTest
 class ProductServiceTest {
@@ -22,6 +25,8 @@ class ProductServiceTest {
 	private ProductService productService;
 	@Autowired
 	private ProductRepository productRepository;
+	@Autowired
+	private  ProductItemService productItemService;
 
 	@Test
 	void ADD_PRODUCT_TEST() {
@@ -68,6 +73,23 @@ class ProductServiceTest {
 		assertEquals(result.getProductItems().get(0).getName(), "나이끼01");
 		assertEquals(result.getProductItems().get(1).getPrice(), 130000);
 		assertEquals(result.getProductItems().get(2).getCount(), 2);
+	}
+
+	@Test
+	@Transactional
+	void DELETE_PRODUCT_TEST() {
+		Long sellerId = 1L;
+
+		AddProductForm form = makeProductForm("나이키 에어포스", "신발", 3);
+
+		Product p = productService.addProduct(sellerId, form);
+
+		productService.deleteProduct(p.getId(),1L);
+
+		Product result = productRepository.findById(p.getId()).orElse(null);
+
+		assertEquals(p.getName(),"나이키 에어포스");
+		assertNull(result);
 	}
 
 	private static AddProductForm makeProductForm(String name, String description, int itemCount) {

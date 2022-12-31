@@ -1,0 +1,29 @@
+### 상품 등록 ( 셀러 )
+POST http://localhost:8081/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjcyNDY2Mjc0LCJleHAiOjE2NzI1NTI2NzR9.LGwpYjs8j2ird6Gm2oPSzvOMK2hhiRX2C5LfHXvCgdI
+
+{
+  "name": "나이키",
+  "description": "신발",
+  "items": [
+    {
+      "productId": 1,
+      "name": "나이키 에어포스",
+      "price": 20000,
+      "count": 10
+    }
+  ]
+}
+
+### 아이템 상품 추가 ( 셀러 )
+POST http://localhost:8081/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjcyNDY2Mjc0LCJleHAiOjE2NzI1NTI2NzR9.LGwpYjs8j2ird6Gm2oPSzvOMK2hhiRX2C5LfHXvCgdI
+
+{
+      "productId": 1,
+      "name": "나이키 에어포",
+      "price": 20000,
+      "count": 10
+}

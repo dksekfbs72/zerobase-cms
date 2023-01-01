@@ -25,17 +25,17 @@ Content-Type: application/json
 ### 회원 정보 조회 ( 고객)
 GET http://localhost:8080/customer/getInfo
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI0MTQxNTMsImV4cCI6MTY3MjUwMDU1M30.eYcf0bPb4jAbBPHcwdmK-5b1RluDsBNXD39biHdJrtw
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI1ODkwMTUsImV4cCI6MTY3MjY3NTQxNX0.r-s2pFctKlcha0baE3DI-Vn3HL00ScD95_Z18Nxm4yY
 
 ### 잔액 변경( 고객)
 POST http://localhost:8080/customer/balance
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI0MTQxNTMsImV4cCI6MTY3MjUwMDU1M30.eYcf0bPb4jAbBPHcwdmK-5b1RluDsBNXD39biHdJrtw
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI1ODkwMTUsImV4cCI6MTY3MjY3NTQxNX0.r-s2pFctKlcha0baE3DI-Vn3HL00ScD95_Z18Nxm4yY
 
 {
   "from" : "server",
   "message" : "돈 충전",
-  "money" : 5000
+  "money" : 500000
 }
 
 ##############################

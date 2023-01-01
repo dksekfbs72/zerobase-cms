@@ -118,3 +118,30 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2V
 GET http://localhost:8081/customer/cart
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI1ODQ2NDYsImV4cCI6MTY3MjY3MTA0Nn0.OLzV8dMAHOEcm0aflBqtdw3yeK3LBaGUt-1c3M8rYSE
+
+### 카트 주문
+POST http://localhost:8081/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI1ODQ2NDYsImV4cCI6MTY3MjY3MTA0Nn0.OLzV8dMAHOEcm0aflBqtdw3yeK3LBaGUt-1c3M8rYSE
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "id": 1,
+      "sellerId": 1,
+      "name": "나이키",
+      "description": "신발",
+      "items": [
+        {
+          "id": 1,
+          "name": "270",
+          "count": 9,
+          "price": 20000
+        }
+      ]
+    }
+  ],
+  "messages": []
+}
+

@@ -33,7 +33,7 @@ public class CartApplication {
 		}
 		Cart cart = cartService.getCart(customerId);
 
-		if (cart != null && !addAble(cart, product, form)) {
+		if (!addAble(cart, product, form)) {
 			throw new CustomException(ErrorCode.ITEM_COUNT_NOT_ENOUGH);
 		}
 		return cartService.addCart(customerId, form);
@@ -54,6 +54,7 @@ public class CartApplication {
 
 		cart.setMessages(new ArrayList<>());
 		cartService.putCart(customerId,cart);
+		cartService.putCart(cart.getCustomerId(),cart);
 		return returnCart;
 	}
 
@@ -61,7 +62,7 @@ public class CartApplication {
 		cartService.putCart(customerId,null);
 	}
 
-	private Cart refreshCart(Cart cart) {
+	protected Cart refreshCart(Cart cart) {
 
 		Map<Long, Product> productMap = productSearchService.getListByProductIds(
 				cart.getProducts().stream().map(Cart.Product::getId).collect(Collectors.toList()))
@@ -102,7 +103,7 @@ public class CartApplication {
 					cartProductItem.setCount(pi.getCount());
 				}
 				if (isPriceChanged && isCountNotEnough) {
-					tmpMessages.add(cartProductItem.getName() + " 가격과 수량이 변경되었습니다. 구매 가능한 최대치로 뱐걍되었습니다.");
+					tmpMessages.add(cartProductItem.getName() + " 가격과 수량이 변경되었습니다. 구매 가능한 최대치로 변경되었습니다.");
 				} else if (isPriceChanged) {
 					tmpMessages.add(cartProductItem.getName() + " 가격이 변경되었습니다.");
 				} else if (isCountNotEnough) {
@@ -126,7 +127,6 @@ public class CartApplication {
 				cart.addMessage(builder.toString());
 			}
 		}
-		cartService.putCart(cart.getCustomerId(),cart);
 		return cart;
 	}
 

@@ -39,7 +39,7 @@ class CartApplicationTest {
 		assertEquals(result.getProductItems().get(1).getPrice(),20000);
 		assertEquals(result.getProductItems().get(2).getCount(),10);
 
-		Long customerId=101L;
+		Long customerId=10L;
 		cartApplication.clearCart(customerId);
 
 		Cart cart = cartApplication.addCart(customerId,makeAddForm(result));

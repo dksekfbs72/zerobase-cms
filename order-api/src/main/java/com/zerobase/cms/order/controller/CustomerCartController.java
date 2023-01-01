@@ -35,6 +35,8 @@ public class CustomerCartController {
 	@GetMapping
 	public ResponseEntity<Cart> showCart(
 		@RequestHeader(name = "X-AUTH-TOKEN") String token){
+		System.out.println(token);
+		System.out.println(provider.getUserVo(token).getId());
 		return ResponseEntity.ok(cartApplication.getCart(provider.getUserVo(token).getId()));
 	}
 

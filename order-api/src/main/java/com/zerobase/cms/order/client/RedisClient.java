@@ -37,6 +37,7 @@ public class RedisClient {
 	}
 
 	public void put(Long key, Cart cart) {
+		System.out.println(key);
 		put(key.toString(), cart);
 	}
 	public void put(String key, Cart cart) {

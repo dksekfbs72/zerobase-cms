@@ -54,7 +54,6 @@ public class CartApplication {
 
 		cart.setMessages(new ArrayList<>());
 		cartService.putCart(customerId,cart);
-		cartService.putCart(cart.getCustomerId(),cart);
 		return returnCart;
 	}
 

@@ -31,6 +31,7 @@ public class CartService {
 	}
 
 	public Cart addCart(Long customerId, AddProductCartForm form) {
+		System.out.println(customerId);
 		Cart cart = redisClient.get(customerId,Cart.class);
 		if (cart == null) {
 			cart = new Cart();

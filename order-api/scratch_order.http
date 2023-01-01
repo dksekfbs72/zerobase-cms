@@ -1,7 +1,7 @@
 ### 상품 등록 ( 셀러 )
 POST http://localhost:8081/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjcyNDY2Mjc0LCJleHAiOjE2NzI1NTI2NzR9.LGwpYjs8j2ird6Gm2oPSzvOMK2hhiRX2C5LfHXvCgdI
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjcyNTkzNTY2LCJleHAiOjE2NzI2Nzk5NjZ9.T43gKlNGQkqa3a2Wn0dzravzwOADZsGxxmjfZstbaV8
 
 {
   "name": "나이키",
@@ -81,24 +81,23 @@ Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI1ODQ2NDYsImV4cCI6MTY3MjY3MTA0Nn0.OLzV8dMAHOEcm0aflBqtdw3yeK3LBaGUt-1c3M8rYSE
 
 {
-  "id" : 1,
+  "id": 4,
+  "name": "나이키",
   "description": "신발",
   "items": [
     {
-      "id": 1,
+      "id": 4,
       "name": "270",
       "price": 20000,
-      "count": 9
+      "count": 5
     }
-  ],
-  "name" : "나이키",
-  "sellerId" : 1
+  ]
 }
 
 ### 상품 등록 ( 셀러 )
 POST http://localhost:8081/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjcyNTg0Njk2LCJleHAiOjE2NzI2NzEwOTZ9.WzjALRVvQiDftuWsMVFZEBbs6AGdC6Mjhz7fkI2b9LI
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI1OTM2MDIsImV4cCI6MTY3MjY4MDAwMn0.I7E9pDjVmEULYOEhHQEQ0ILEj-Vp-Rk14S0FdN9To5o
 
 {
   "id" : 2,
@@ -109,7 +108,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2V
       "productId": 1,
       "name": "270",
       "price": 20000,
-      "count": 20
+      "count": 5
     }
   ]
 }
@@ -117,7 +116,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2V
 ### 카트 확인
 GET http://localhost:8081/customer/cart
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI1ODQ2NDYsImV4cCI6MTY3MjY3MTA0Nn0.OLzV8dMAHOEcm0aflBqtdw3yeK3LBaGUt-1c3M8rYSE
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2VnE5NlNPaTJYNGExUU5hemhZPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzI1OTM2MDIsImV4cCI6MTY3MjY4MDAwMn0.I7E9pDjVmEULYOEhHQEQ0ILEj-Vp-Rk14S0FdN9To5o
 
 ### 카트 주문
 POST http://localhost:8081/customer/cart/order
@@ -136,7 +135,35 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2V
         {
           "id": 1,
           "name": "270",
-          "count": 9,
+          "count": 0,
+          "price": 20000
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "sellerId": null,
+      "name": "나이키",
+      "description": "신발",
+      "items": [
+        {
+          "id": 3,
+          "name": "270",
+          "count": 5,
+          "price": 20000
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "sellerId": null,
+      "name": "나이키",
+      "description": "신발",
+      "items": [
+        {
+          "id": 4,
+          "name": "270",
+          "count": 5,
           "price": 20000
         }
       ]
@@ -144,4 +171,3 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidjdpc2NaWGxiOTd6L1AwRXFRaEhBMjF2V
   ],
   "messages": []
 }
-

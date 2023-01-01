@@ -1,5 +1,8 @@
 package com.zerobase.cms.user.service;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
 import com.zerobase.cms.user.service.customer.SignUpCustomerService;
@@ -20,12 +23,12 @@ class SignUpCustomerServiceTest {
 		SignUpForm form = SignUpForm.builder()
 			.name("name")
 			.birth(LocalDate.now())
-			.email("asd.naver.com")
+			.email("asd@naver.com")
 			.password("1")
 			.phone("123123123")
 			.build();
 		Customer c = service.signUp(form);
-		Assert.isTrue(service.signUp(form)!=null);
+		assertNotNull(c);
 	}
 
 }

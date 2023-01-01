@@ -47,8 +47,7 @@ public class Product extends BaseEntity{
 			.sellerId(sellerId)
 			.name(form.getName())
 			.description(form.getDescription())
-			.productItems(form.getItems().stream()
-				.map(piFrom->ProductItem.of(sellerId,piFrom)).collect(Collectors.toList()))
+			.productItems(form.getItems().stream().map(piFrom->ProductItem.of(sellerId,piFrom)).collect(Collectors.toList()))
 			.build();
 	}
 }

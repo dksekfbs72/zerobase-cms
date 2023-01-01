@@ -26,11 +26,10 @@ class ProductServiceTest {
 	@Autowired
 	private ProductRepository productRepository;
 	@Autowired
-	private  ProductItemService productItemService;
-	@Autowired
 	private ProductSearchService productSearchService;
 
 	@Test
+	@Transactional
 	void ADD_PRODUCT_TEST() {
 		Long sellerId = 1L;
 
@@ -39,15 +38,14 @@ class ProductServiceTest {
 		Product p = productService.addProduct(sellerId, form);
 
 		Product result = productRepository.findById(p.getId()).get();
-
 		assertNotNull(result);
-		assertEquals(p.getName(),"나이키 에어포스");
-		assertEquals(p.getSellerId(),1L);
-		assertEquals(p.getDescription(),"신발");
-		assertEquals(p.getProductItems().size(),3);
-		assertEquals(p.getProductItems().get(0).getName(),"나이키 에어포스0");
-		assertEquals(p.getProductItems().get(1).getPrice(),10000);
-		assertEquals(p.getProductItems().get(2).getCount(),1);
+		assertEquals(result.getName(),"나이키 에어포스");
+		assertEquals(result.getSellerId(),1L);
+		assertEquals(result.getDescription(),"신발");
+		assertEquals(result.getProductItems().size(),3);
+		assertEquals(result.getProductItems().get(0).getName(),"나이키 에어포스0");
+		assertEquals(result.getProductItems().get(1).getPrice(),10000);
+		assertEquals(result.getProductItems().get(2).getCount(),1);
 	}
 
 	@Test
